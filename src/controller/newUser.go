@@ -16,6 +16,8 @@ func CreateUser(c *gin.Context) {
 			fmt.Sprintf("Some of the fields are missing or invalid. Please check and try again, error: %s", err.Error()))
 		c.JSON(MyError.Code, MyError)
 		return
+	} else {
+		c.JSON(200, UserRequest)
 	}
-	fmt.Println(UserRequest)
+
 }
